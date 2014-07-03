@@ -23,3 +23,4 @@ FORMS    += widget.ui
 
 LIBS += -lavutil -lavformat -lavcodec -lswscale
 
+QMAKE_CXXFLAGS += -std=c++11

@@ -12,14 +12,17 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = 0);
-    void setImage(const QImage & image);
+    explicit Widget(char * filename, QWidget *parent = 0);
+    void setImage(uchar * buffer, int len);
+    char * filename;
+
     ~Widget();
 protected:
-    void paintEvent();
+    void paintEvent(QPaintEvent *);
 private:
+    uchar * buffer;
+    int len;
     QImage image;
-private:
     Ui::Widget *ui;
 };
 
